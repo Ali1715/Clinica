@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "vision-ia-clinica",
+  "private_key_id": "960284778250530e6aefae41782f0e5b78d43596",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC66blkNmODDarI\nPivLwPY6LoArYQRwU/N6LZSiK89zSCUZYC3objC6KVbeS7eY4gS97qvpfUItc+MA\nJVOWPbeS1qoxGcYCBYweYyECUm80vi+7rIVVhZqWfKLEBSrl1oYj7oGhiceTBEax\nIIJuyUNefk3m7uX49f7KVgxJusAS7hCoLv/kJUUZNVGhD6Xa+WHVneK0ec9UFptT\nzcjI0lxITU7VYQsK3tgHNM3Jq4PEXQ6gbj9N5kgbbx3cUsMB1P5QAlZ0OecRkIHv\nNR2Sf7gXpnb4XgP5tblE73XVrP7FK71Gbcveli8bFpEtEBxa2LWk2ZxKY0OESFAZ\nULSjNohfAgMBAAECggEAEBfuurEE1B8O94su2djapTt6wAFsUJWnOaZcuAfoppxC\nzCgKsTVyTvJ0mdL60xg8NfRWa1YPJtBlw7idtVUeuMRwm/tZoAlFPW/l7YgWg3vl\nVUCaAblCtwwH4bPbiTWgOs4e7ZSU5qowF1vdZIJCIYvjfkD589E5J8fNQA3rMCtB\n/0YnbLOD4dL+DMQJ7KXrKQcL3jfX+mx7I9HhfuwTZWhp5VKkptrhvV7xdVgIA7Nf\nw4+emx9/GUF0zHofKk2DcxZXLKN6QyM/CMo/tq8VKRwL45nrkLbD5ZoBgPb8n+yr\nzmohZnfpHZhEhCMzxYtD0BsrM5szJsQmuvCfR0kemQKBgQDd3HIVZah5ZFxfWeg4\nKDm8tfcmxlvdN/HU1kpW1/USrdb/DaODLBNIg8kXz+s/G5emjEO0Og75AEuiw41D\npG9OqVqQpQi2dO2G7yzj/BsJdw+PpZxJ+oOJg9P65bd2amN6sgizk2jxZ192M8rd\nbXuurPte6cHg7+9tTKIFT7NC2QKBgQDXrJoBIaGGOeZ2yLgM/zjnw1eaahatle0o\n5LU8iZMyJEQuoPMWhS2aQQKG6L0hEM+X1p2aLH5XXdVky1FpTA0eJWAtxufdoT+k\nGPLXd/no5JIMo4L37qb41fFh1d+UEDr7w9gpizqRUExUFI5687pv+BaWStvMg3yy\nLULItLGx9wKBgFAc1zE0yTY0cEqaG4mTtO2Yw4tD204xcmjJjIR5bOx2y4jD8wRd\nuQTZWZb4pFjgbM1eHuCIinmNisJWXL9NNEgyTRqoDVJdPJwZ55rXoSe0z3Cue5YX\nGMJiUPxrUOk4l31ppky58Q4ipsz2/M0iSKQVoJtwS2sfGNTd9C94zSFZAoGAKptj\nlUOimFTJ7b97dL3a7RZPMScyMbrDrmd4UmxPUwGNIrUTMOjAeI/NQv+plWWvzSxN\n2E5f6zyTUqVEAQxQLxttI73+wm7/lpiDKQP/r/2vyKVo0zgnblM9q3lIAQUv0dr/\n0j06Jcj6O0YQW8PYmhQlyi0hvQZg1QZSAjqIPEMCgYABnVtXsQDeuiThX8ftJ+G5\nGNGPYkoYbVxdcHbL+Mqe1kXSERHjm9t2ghd6XRwyMTEkTxUeKz2CDOUQq2Gvpblm\nKk6vH2IioT3vwbNy5zGQKjHMrZLYnw+LmOGZLejKNUtsRXHMc4BmqGajyXDzW0BM\nrHpbO5BKs4KT9OCOgtFLEA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "api-clinica@vision-ia-clinica.iam.gserviceaccount.com",
+  "client_id": "105810065480079806157",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/api-clinica%40vision-ia-clinica.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

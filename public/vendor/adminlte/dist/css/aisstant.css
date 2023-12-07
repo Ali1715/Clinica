@@ -1,0 +1,15 @@
+
+.assistant-button {
+    background-color: transparent; /* Fondo transparente para que el ícono sea visible */
+    color: #4caf50; /* Color de ícono */
+    border: none;
+    padding: 0;
+    font-size: 24px; /* Tamaño del ícono */
+    border-radius: 50%; /* Forma de círculo */
+    cursor: pointer;
+    transition: transform 0.2s; /* Agrega una animación de transformación */
+}
+
+.assistant-button:hover {
+    transform: scale(1.1); /* Escala el ícono cuando se pasa el mouse sobre él */
+}
