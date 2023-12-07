@@ -335,6 +335,12 @@ return [
                 'icon' => 'fas fa-fw fa-user',
             ],
             [
+                        
+                'text' => 'Registro',
+                'url'  => '/registro',
+                'icon' => 'fas fa-fw fa-quote-left',
+            ],
+            [
                 'text' => 'Administrativo',
                 'url' => '/administrativos',
                 'icon' => 'fas fa-fw fa-user',
@@ -350,6 +356,7 @@ return [
                         'url'  => '/admin/roles',
                         'icon' => 'fas fa-fw fa-quote-left',
                     ],
+                
       
                 ],
                 
