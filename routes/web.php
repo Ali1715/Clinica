@@ -54,6 +54,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\IndicadoreshcirujiaController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AsistenteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,6 +151,7 @@ Route::post('/speech_to_text', [App\Http\Controllers\HomeController::class, 'spe
 
 Route::get('/cargar_excel', [App\Http\Controllers\ExcelController::class, 'cargarExcel']);
 Route::get('/historial/edit', [App\Http\Controllers\HistorialController::class, 'edit'])->name('historial.edit');
+Route::get('/registro', [App\Http\Controllers\AsistenteController::class, 'edit'])->name('asistente.index');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
 

@@ -8,7 +8,7 @@
         
         <div class="form-group">
             {{ Form::label('Diagnostico') }}
-            {{ Form::text('Diagnostico', $consulta->Diagnostico, ['id' => 'Diagnostico','class' => 'form-control' . ($errors->has('Diagnostico') ? ' is-invalid' : ''), 'placeholder' => 'Diagnostico']) }}
+            {{ Form::text('Diagnostico', $consulta->Diagnostico, ['id' => 'INPUT','class' => 'form-control' . ($errors->has('Diagnostico') ? ' is-invalid' : ''), 'placeholder' => 'Diagnostico']) }}
             {!! $errors->first('Diagnostico', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
