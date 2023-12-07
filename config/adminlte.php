@@ -407,11 +407,7 @@ return [
         'url'  => '/dashboard',
         'icon' => 'fas fa-fw fa-dashboard',
     ],
-    [
-        'text' => 'Generar Reportes',
-        'url'  => '/reportes',
-        'icon' => 'fas fa-fw fa-quote-left',
-    ],
+
 ],
 ],    
         /*[
