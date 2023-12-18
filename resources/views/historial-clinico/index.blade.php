@@ -40,6 +40,7 @@
 										<th>Fecha Hora</th>
 										<th>Hip Diagnostico</th>
 										<th>Consultaid</th>
+                                        <th>HistorialID</th>
 
                                         <th></th>
                                     </tr>
@@ -53,6 +54,7 @@
 											<td>{{ $historialClinico->Fecha_hora }}</td>
 											<td>{{ $historialClinico->Hip_diagnostico }}</td>
 											<td>{{ $historialClinico->ConsultaID }}</td>
+                                            <td></td>
 
                                             <td>
                                                 <form action="{{ route('historial-clinicos.destroy',$historialClinico->id) }}" method="POST">

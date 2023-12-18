@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consulta;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
@@ -26,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       
+
+        return view('asistente');
     }
 
     public function transcribeAudio(Request $request)

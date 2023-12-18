@@ -55,6 +55,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\IndicadoreshcirujiaController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AsistenteController;
+use App\Http\Controllers\BitacoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -158,7 +159,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 /**GENERADO PARA LOS CRUDS*/
 Route::resource('administrativos', AdministrativoController::class);
-Route::resource('anlisis', AnalisiController::class);
+Route::resource('analisis', AnalisiController::class);
 Route::resource('chatbots', ChatbotController::class);
 Route::resource('cirujias', CirujiaController::class);
 Route::resource('cirujia', CirujiumController::class);
@@ -167,16 +168,16 @@ Route::resource('citum', CitumController::class);
 Route::resource('consultas', ConsultaController::class);
 Route::resource('consultum', ConsultumController::class);
 Route::resource('doctors', DoctorController::class);
-Route::resource('equipo_cirijas', EquipoCirujiumController::class);
+Route::resource('equipo-cirijas', EquipoCirujiumController::class);
 Route::resource('equipos', EquipoController::class);
 Route::resource('especialidads', EspecialidadController::class);
 Route::resource('excel', ExcelController::class);
 Route::resource('facturas', FacturaController::class);
 Route::resource('failedjobs', FailedjobController::class);
-Route::resource('historial_cirujias', HistorialCirujiaController::class);
-Route::resource('historial_cirujia_rgistros', HistorialCirujiaRgistroController::class);
-Route::resource('historial_cirujiums', HistorialCirujiumController::class);
-Route::resource('historial_clinicos', HistorialClinicoController::class);
+Route::resource('historial-cirujias', HistorialCirujiaController::class);
+Route::resource('historial-cirujia_rgistros', HistorialCirujiaRgistroController::class);
+Route::resource('historial-cirujiums', HistorialCirujiumController::class);
+Route::resource('historial-clinicos', HistorialClinicoController::class);
 Route::resource('historials', HistorialController::class);
 Route::resource('home', HomeController::class);
 Route::resource('horarios', HorarioController::class);
@@ -212,3 +213,7 @@ Route::get('archivo', [OCRController::class, 'index'])->name('index');
 Route::get('/generate-pdf', [ReportController::class, 'generatePDF']);
 Route::get('/generate-csv', [ReportController::class, 'generateCSV']);
 
+// Ruta para mostrar el calendario
+Route::get('/calendario', [App\Http\Controllers\CitaController::class, 'calendario'])->name('calendario')->middleware('auth');
+
+Route::resource('/bitacoras', BitacoraController::class);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cita;
+use App\Models\Consulta;
 use Illuminate\Http\Request;
 
 /**
@@ -106,4 +107,22 @@ class CitaController extends Controller
         return redirect()->route('citas.index')
             ->with('success', 'Cita deleted successfully');
     }
+    public function calendario()
+{
+    $consulta = Consulta::select(
+
+        'pacientes.nombre as nombre_paciente',
+        'users.name as nombre_doctor',
+        'citas.Fechahora as Fecha'
+
+    )
+    ->join('citas', 'consultas.CitaID', '=', 'citas.id')
+    ->join('pacientes', 'consultas.PacienteID', '=', 'pacientes.id')
+    ->join('doctors', 'consultas.DoctorID', '=', 'doctors.id')
+    ->join('users', 'consultas.DoctorID', '=', 'users.id')
+    ->get();
+
+    return view('cita.calendario',compact('consulta'));
+
+}
 }

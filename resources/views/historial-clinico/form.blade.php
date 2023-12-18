@@ -21,7 +21,11 @@
             {{ Form::text('ConsultaID', $historialClinico->ConsultaID, ['class' => 'form-control' . ($errors->has('ConsultaID') ? ' is-invalid' : ''), 'placeholder' => 'Consultaid']) }}
             {!! $errors->first('ConsultaID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
+        <div class="form-group">
+            {{ Form::label('HistorialID') }}
+            {{ Form::text('HistorialID', $historialClinico->HistorialID, ['class' => 'form-control' . ($errors->has('HistorialID') ? ' is-invalid' : ''), 'placeholder' => 'HistorialID']) }}
+            {!! $errors->first('HistorialID', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>

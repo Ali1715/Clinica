@@ -24,7 +24,7 @@ class OCRController extends Controller
         $imageFile = $request->file('file');
 
         // Tu credencial JSON 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=D:\Laragon\laragon\www\Clinica/credencial.json');
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\laragon\www\ClinicaRi-on/credencial.json');
 
         // Crea una instancia ImageAnnotatorClient
         $imageAnnotator = new ImageAnnotatorClient();
@@ -84,6 +84,7 @@ class OCRController extends Controller
                 }
                
                 $analysisPrices[] = $concatenatedWord; 
+                
                 if (stripos($concatenatedWord, ' SI') !== false) {
                     $siWords[] = str_ireplace(' SI', '', $concatenatedWord);
                 

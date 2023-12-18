@@ -66,6 +66,15 @@
 <div class="container" style="width: 70px; height:50px; top: 40px; left: 50px;">Calendar
     <div id='calendar'></div>
 </div>
+
+@foreach($consulta as $registro)
+            <tr>
+                <td>{{ $registro['nombre_paciente'] }}</td>
+                <td>{{ $registro['nombre_doctor'] }}</td>
+                <td>{{ $registro['Hora_inicio'] }}</td>
+                <td>{{ $registro['Dia'] }}</td>
+            </tr>
+        @endforeach
       </div>
 
 

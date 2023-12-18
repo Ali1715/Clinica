@@ -384,15 +384,19 @@ return [
     'text' => 'Historiales',
     'icon' => 'fas fa-fw fa-user',
     'submenu' => [
-    
     [
-        'text' => 'Historial Clinico',
-        'url'  => '/historial/edit',
+        'text' => 'Historiales',
+        'url'  => '/historials',
         'icon' => 'fas fa-fw fa-quote-left',
     ],
     [
-        'text' => 'Historial de Transplante',
-        'url'  => '',
+        'text' => 'Historial Clinico',
+        'url'  => '/historial-clinicos',
+        'icon' => 'fas fa-fw fa-quote-left',
+    ],
+    [
+        'text' => 'Historial de Cirujias',
+        'url'  => '/historial-cirujias',
         'icon' => 'fas fa-fw fa-quote-left',
     ],
 ],

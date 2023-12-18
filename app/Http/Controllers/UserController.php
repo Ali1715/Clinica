@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bitacora;
+use App\Models\Doctor;
+use App\Models\Personal;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class UserController
@@ -43,10 +47,33 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(User::$rules);
+        
 
         $user = User::create($request->all());
 
+        //Bitacora
+$id2 = Auth::id();
+$user2 = User::where('id', $id2)->first();
+$tipo = "default";
+$doctor =Doctor::where('id', $id2)->first();
+$personal =Personal::where('id', $id2)->first();
+
+if ($doctor && $doctor->id == $id2) {
+    $tipo = "Doctor";
+}
+
+if ($personal && $personal->id == $id2) {
+    $tipo = "Enfermera/ro";
+}
+$action = "Agrego un usuario". "+ $user->name";
+$bitacora = Bitacora::create();
+$bitacora->tipou = $tipo;
+$bitacora->name = $user2->name;
+$bitacora->actividad = $action;
+$bitacora->fechaHora = date('Y-m-d H:i:s');
+$bitacora->ip = $request->ip();
+$bitacora->save();
+//----------
         return redirect()->route('users.index')
             ->with('success', 'User created successfully.');
     }
@@ -86,9 +113,34 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        request()->validate(User::$rules);
+        
 
         $user->update($request->all());
+
+        
+//Bitacora
+$id2 = Auth::id();
+$user = User::where('id', $id2)->first();
+$tipo = "default";
+$doctor =Doctor::where('id', $id2)->first();
+$personal =Personal::where('id', $id2)->first();
+
+if ($doctor && $doctor->id == $id2) {
+    $tipo = "Doctor";
+}
+
+if ($personal && $personal->id == $id2) {
+    $tipo = "Enfermera/ro";
+}
+$action = "Edito un usuario". "+ $user->name";
+$bitacora = Bitacora::create();
+$bitacora->tipou = $tipo;
+$bitacora->name = $user->name;
+$bitacora->actividad = $action;
+$bitacora->fechaHora = date('Y-m-d H:i:s');
+$bitacora->ip = $request->ip();
+$bitacora->save();
+//----------
 
         return redirect()->route('users.index')
             ->with('success', 'User updated successfully');
@@ -99,9 +151,42 @@ class UserController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        $user = User::find($id)->delete();
+    // Get the user to be deleted
+    $userToDelete = User::find($id);
+
+    // Delete the user
+    $userDeleted = User::destroy($id);
+
+    if ($userDeleted) {
+        //Bitacora
+        $id2 = Auth::id();
+        $user = User::where('id', $id2)->first();
+        $tipo = "default";
+        $doctor = Doctor::where('id', $id2)->first();
+        $personal = Personal::where('id', $id2)->first();
+
+        if ($doctor && $doctor->id == $id2) {
+            $tipo = "Doctor";
+        }
+
+        if ($personal && $personal->id == $id2) {
+            $tipo = "Enfermera/ro";
+        }
+
+        // Get the username from the user to be deleted
+        $username = $userToDelete->name;
+
+        $action = "Eliminó un usuario: " . $username;
+        $bitacora = Bitacora::create();
+        $bitacora->tipou = $tipo;
+        $bitacora->name = $user->name;
+        $bitacora->actividad = $action;
+        $bitacora->fechaHora = now(); // Use Carbon for simplicity
+        $bitacora->ip = $request->ip();
+        $bitacora->save();
+    }
 
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');

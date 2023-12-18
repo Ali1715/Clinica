@@ -13,7 +13,7 @@ export default defineConfig({
                 'resources/css/home.css',
                 'resources/calendar/fullcalendar/packages/core/main.css',
                 'resources/calendar/fullcalendar/packages/daygrid/main.css',
-                '/node_modules/@fullcalendar/**',
+                '/node_modules/@fullcalendar/core/index.global.min.js',
                 'resources/calendar/css/bootstrap.min.css',
                 'resources/calendar/css/style.css',
             ],

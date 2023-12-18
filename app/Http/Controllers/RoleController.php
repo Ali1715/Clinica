@@ -11,7 +11,7 @@ use Spatie\Permission\Models\Role;
 
 date_default_timezone_set('America/La_Paz');
 
-class RoleController extends Controller
+class   RoleController extends Controller
 {
 
 

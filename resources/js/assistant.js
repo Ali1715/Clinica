@@ -41,6 +41,7 @@ floatingButtonss.addEventListener('mouseleave', () => { // Corregido: 'mouseleav
 //************************************************************************************************ */
  // Obtén una lista de todos los campos de entrada del formulario
  const formFields = document.querySelectorAll('.custom-form input, .custom-form select, .custom-form textarea');
+ //const formFields = document.querySelectorAll('.custom-form .form-group .form-control');
  const context = new AudioContext();
  // Variable para realizar un seguimiento del índice del campo actual
  let currentIndex = 0;
@@ -54,7 +55,7 @@ floatingButtonss.addEventListener('mouseleave', () => { // Corregido: 'mouseleav
      
              // Encuentra el campo de entrada actual
              const currentField = Array.from(formFields).find(field => document.activeElement === field);
-
+            console.log(currentField);
              if (currentField) {
                  // Dice el nombre del campo en el que se encuentra el puntero
                  speak('Complete el campo ' + currentField.name);
@@ -86,10 +87,11 @@ floatingButtonss.addEventListener('mouseleave', () => { // Corregido: 'mouseleav
          // Menciona el mensaje la primera vez
          speak('Hola, vamos a registrar los datos');
          firstTime = false; // Cambia el estado a falso para no repetir el mensaje
+         console.log(formFields);
          formFields[0].focus(); // Establece el foco en el primer campo
          // Encuentra el campo de entrada actual
          const currentField = Array.from(formFields).find(field => document.activeElement === field);
-
+console.log(currentField);
          if (currentField) {
              // Dice el nombre del campo en el que se encuentra el puntero
              speak('Complete el campo ' + currentField.name);
@@ -114,15 +116,17 @@ floatingButtonss.addEventListener('mouseleave', () => { // Corregido: 'mouseleav
   
      const transcript = event.results[0][0].transcript;
      // Divide la transcripción en palabras para interpretar el campo y el valor
-     const words = transcript.toLowerCase().split(' ');
-
+     const words = transcript.split(' ');
+        console.log(words);
      if (words.length >= 2) {
          const fieldName = words[0]; // La primera palabra es el nombre del campo
          let value = words.slice(1).join(' '); // Las demás palabras son el valor
 
-         // Busca el campo de entrada correspondiente por su nombre
-         const input = document.querySelector(`input[name="${fieldName}"], select[name="${fieldName}"], textarea[name="${fieldName}"]`);
 
+         // Busca el campo de entrada correspondiente por su nombre
+         //const input = document.querySelector(`input[name="${fieldName}"], select[name="${fieldName}"], textarea[name="${fieldName}"]`);
+         const input = document.querySelector(`input[name="${fieldName}"]`);
+         console.log(input);
          if (input) {
              if (fieldName === 'teléfono') {
                  // Si es el campo "teléfono," elimina los espacios en blanco
